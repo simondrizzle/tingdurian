@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#2d6cdf">
+  <meta name="description" content="婷 Ting 榴莲 — 新加坡全岛包邮，WhatsApp / 微信下单">
+  <title>婷 Ting 榴莲 | 新加坡全岛包邮</title>
+  <link rel="stylesheet" href="css/style.css?v=7">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <div class="brand">
+        <img class="brand__logo" src="images/logo.svg" alt="婷" width="56" height="56">
+        <div class="brand__text">
+          <span class="brand__shop">TING SHOP</span>
+          <p class="brand__tagline" id="brandTagline">WHATSAPP / 微信下单 · 全岛送 SG 包邮</p>
+        </div>
+      </div>
+      <div class="header__actions">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+        <button class="header__contact" id="openContact" type="button" aria-label="联系我们">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__badge" id="deliveryBanner">全岛送 SG 包邮</div>
+      <h2 class="hero__title" id="heroTitle">今日榴莲价格<br>直接下单</h2>
+      <p class="hero__desc" id="heroDesc">每款产品支持不同盒数套餐。点击每一行右侧按钮，即可 WhatsApp 或微信下单。</p>
+    </section>
+
+    <section class="products" aria-label="产品列表">
+      <div class="section-head">
+        <h2 class="section-head__title" id="productsTitle">全部产品</h2>
+        <span class="section-head__count" id="productCount"></span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <span class="feature__icon">🚚</span>
+        <div>
+          <strong id="feature1Title">新加坡全岛配送</strong>
+          <p id="feature1Desc">下单后当天/隔天安排送货</p>
+        </div>
+      </div>
+      <div class="feature">
+        <span class="feature__icon">✨</span>
+        <div>
+          <strong id="feature2Title">云顶 / 彭亨 / 柔佛精选</strong>
+          <p id="feature2Desc">AAA、黑金、红虾、黑刺、金凤</p>
+        </div>
+      </div>
+      <div class="feature">
+        <span class="feature__icon">💬</span>
+        <div>
+          <strong id="feature3Title">直接联系下单</strong>
+          <p id="feature3Desc">WHATSAPP +65 8067 9518 / 微信 W785125739</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="footerText"></p>
+  </footer>
+
+  <!-- WeChat Modal -->
+  <div class="modal" id="wechatModal" role="dialog" aria-modal="true" aria-labelledby="wechatModalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close aria-label="关闭">&times;</button>
+      <div class="modal__icon wechat-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor">
+          <path d="M8.5 4C4.36 4 1 6.69 1 10.03c0 1.83 1.01 3.47 2.58 4.57L3 18l3.47-1.12c.93.26 1.92.4 2.93.4.22 0 .44-.01.65-.03C9.2 19.89 10.78 21 12.5 21c.37 0 .73-.04 1.08-.11l2.92 1.48-.78-2.85c1.28-.98 2.1-2.43 2.1-4.05 0-3.03-2.87-5.47-6.32-5.47zM6.5 9.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm5.5-1.47c-2.87 0-5.2 1.97-5.2 4.4 0 1.38.74 2.62 1.92 3.47L11.5 17l2.35-1.2c.52.1 1.07.16 1.65.16 2.87 0 5.2-1.97 5.2-4.4S17.87 8.03 15 8.03zm-2 3.47a.8.8 0 1 1 0-1.6.8.8 0 0 1.6zm4 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6z"/>
+        </svg>
+      </div>
+      <h3 class="modal__title" id="wechatModalTitle">微信下单</h3>
+      <p class="modal__product" id="wechatProductName"></p>
+      <div class="wechat-id-box">
+        <span class="wechat-id-box__label" id="wechatIdLabel">微信号</span>
+        <span class="wechat-id-box__value" id="wechatIdDisplay"></span>
+      </div>
+      <button class="btn btn--wechat btn--full" id="copyWechatId" type="button">复制微信号</button>
+      <p class="modal__hint" id="wechatHint">复制后打开微信，搜索添加好友并发送订单信息</p>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close" type="button" data-close aria-label="关闭">&times;</button>
+      <h3 class="modal__title" id="contactModalTitle">联系我们</h3>
+      <p class="modal__desc" id="contactModalDesc">选择您方便的联系方式</p>
+      <div class="contact-actions">
+        <a class="btn btn--whatsapp btn--full" id="contactWhatsApp" href="#" target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 0 0 1 2.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+          </svg>
+          <span id="contactWhatsAppLabel">WhatsApp 联系</span>
+        </a>
+        <button class="btn btn--wechat btn--full" id="contactWechat" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M8.5 4C4.36 4 1 6.69 1 10.03c0 1.83 1.01 3.47 2.58 4.57L3 18l3.47-1.12c.93.26 1.92.4 2.93.4.22 0 .44-.01.65-.03C9.2 19.89 10.78 21 12.5 21c.37 0 .73-.04 1.08-.11l2.92 1.48-.78-2.85c1.28-.98 2.1-2.43 2.1-4.05 0-3.03-2.87-5.47-6.32-5.47z"/>
+          </svg>
+          <span id="contactWechatLabel">微信联系</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="application/json" id="app-data">
+  {
+    "whatsappNumber": "6580679518",
+    "wechatId": "W785125739",
+    "i18n": {
+      "zh": {
+        "pageTitle": "婷 Ting 榴莲 | 新加坡全岛包邮",
+        "metaDesc": "婷 Ting 榴莲 - 新加坡全岛包邮，WhatsApp / 微信下单",
+        "brandName": "婷 Ting 榴莲",
+        "brandTagline": "WHATSAPP / 微信下单 · 全岛送 SG 包邮",
+        "contactAria": "联系我们",
+        "closeAria": "关闭",
+        "heroTitle": "今日榴莲价格<br>直接下单",
+        "heroDesc": "每款产品支持不同盒数套餐。点击每一行右侧按钮，即可 WhatsApp 或微信下单。",
+        "productsTitle": "全部产品",
+        "productsCount": "共 {n} 款",
+        "productsAria": "产品列表",
+        "feature1Title": "新加坡全岛配送",
+        "feature1Desc": "下单后当天/隔天安排送货",
+        "feature2Title": "云顶 / 彭亨 / 柔佛精选",
+        "feature2Desc": "AAA、黑金、红虾、黑刺、金凤",
+        "feature3Title": "直接联系下单",
+        "feature3Desc": "WHATSAPP +65 8067 9518 / 微信 W785125739",
+        "footer": "© {year} 婷 Ting 榴莲 · Singapore",
+        "wechatModalTitle": "微信下单",
+        "wechatIdLabel": "微信号",
+        "copyWechat": "复制微信号",
+        "wechatHint": "复制后打开微信，搜索添加好友并发送订单信息",
+        "contactModalTitle": "联系我们",
+        "contactModalDesc": "选择您方便的联系方式",
+        "contactWhatsApp": "WhatsApp 联系",
+        "contactWechat": "微信联系",
+        "toastCopied": "微信号已复制",
+        "wechatProduct": "产品：{name}{detail}",
+        "wechatGeneral": "欢迎咨询任意产品",
+        "orderMsg": "你好，我想下单：{name} {detail}",
+        "defaultMsg": "你好，我想咨询榴莲产品",
+        "deliveryNote": "全岛送 SG 包邮",
+        "waOrderAria": "WhatsApp 下单 {name} {label}",
+        "wxOrderAria": "微信下单 {name} {label}",
+        "langSwitch": "EN",
+        "langSwitchAria": "Switch to English"
+      },
+      "en": {
+        "pageTitle": "Ting Durian | Island-wide Delivery SG",
+        "metaDesc": "Ting Durian - Island-wide delivery in Singapore. Order via WhatsApp / WeChat.",
+        "brandName": "Ting Durian",
+        "brandTagline": "Order via WhatsApp / WeChat · Free SG delivery",
+        "contactAria": "Contact us",
+        "closeAria": "Close",
+        "heroTitle": "Today's Durian Prices<br>Order Instantly",
+        "heroDesc": "Each product has bundle options. Tap the buttons on the right to order via WhatsApp or WeChat.",
+        "productsTitle": "All Products",
+        "productsCount": "{n} items",
+        "productsAria": "Product list",
+        "feature1Title": "Island-wide Delivery",
+        "feature1Desc": "Same-day or next-day delivery after order",
+        "feature2Title": "Genting / Pahang / Johor Selection",
+        "feature2Desc": "AAA, Black Gold, Red Prawn, Black Thorn, Golden Phoenix",
+        "feature3Title": "Order Directly",
+        "feature3Desc": "WhatsApp +65 8067 9518 / WeChat W785125739",
+        "footer": "© {year} Ting Durian · Singapore",
+        "wechatModalTitle": "Order via WeChat",
+        "wechatIdLabel": "WeChat ID",
+        "copyWechat": "Copy WeChat ID",
+        "wechatHint": "Copy the ID, open WeChat, add friend and send your order",
+        "contactModalTitle": "Contact Us",
+        "contactModalDesc": "Choose your preferred contact method",
+        "contactWhatsApp": "Contact via WhatsApp",
+        "contactWechat": "Contact via WeChat",
+        "toastCopied": "WeChat ID copied",
+        "wechatProduct": "Product: {name}{detail}",
+        "wechatGeneral": "Feel free to enquire about any product",
+        "orderMsg": "Hi, I'd like to order: {name} {detail}",
+        "defaultMsg": "Hi, I'd like to enquire about your durian products",
+        "deliveryNote": "Free island-wide delivery SG",
+        "waOrderAria": "WhatsApp order {name} {label}",
+        "wxOrderAria": "WeChat order {name} {label}",
+        "langSwitch": "中",
+        "langSwitchAria": "切换到中文"
+      }
+    },
+    "products": [
+      {
+        "id": 1,
+        "image": "images/products/musang-king.webp",
+        "prices": [
+          { "label": { "zh": "3 盒", "en": "3 boxes" }, "price": "$99" },
+          { "label": { "zh": "5 盒", "en": "5 boxes" }, "price": "$158" }
+        ],
+        "zh": { "name": "云顶猫山王榴莲果肉 400g", "subtitle": "GENTING HIGHLAND Musang King", "weight": "400g / 盒 · 云顶猫", "badge": "AAA" },
+        "en": { "name": "Genting Highland Musang King", "subtitle": "Premium Musang King from Genting Highlands", "weight": "400g / box · Genting", "badge": "AAA" }
+      },
+      {
+        "id": 2,
+        "image": "images/products/black-gold.webp",
+        "prices": [
+          { "label": { "zh": "5 盒", "en": "5 boxes" }, "price": "$99" },
+          { "label": { "zh": "10 盒", "en": "10 boxes" }, "price": "$178" }
+        ],
+        "zh": { "name": "黑金榴莲果肉 400g", "subtitle": "BLACK GOLD Durian", "weight": "400g / 盒", "badge": "黑金" },
+        "en": { "name": "Black Gold Durian", "subtitle": "Premium Black Gold Durian", "weight": "400g / box", "badge": "BLACK GOLD" }
+      },
+      {
+        "id": 3,
+        "image": "images/products/red-prawn.webp",
+        "prices": [
+          { "label": { "zh": "5 盒", "en": "5 boxes" }, "price": "$88" },
+          { "label": { "zh": "10 盒", "en": "10 boxes" }, "price": "$158" }
+        ],
+        "zh": { "name": "红虾榴莲果肉 400g", "subtitle": "RED PRAWN Durian", "weight": "400g / 盒", "badge": "红虾" },
+        "en": { "name": "Red Prawn Durian", "subtitle": "Premium Red Prawn Durian", "weight": "400g / box", "badge": "RED PRAWN" }
+      },
+      {
+        "id": 4,
+        "image": "images/products/black-thorn.webp",
+        "prices": [
+          { "label": { "zh": "2 盒", "en": "2 boxes" }, "price": "$118" },
+          { "label": { "zh": "4 盒", "en": "4 boxes" }, "price": "$218" }
+        ],
+        "zh": { "name": "黑刺王榴莲果肉 400g", "subtitle": "BLACK THORN King", "weight": "400g / 盒", "badge": "黑刺" },
+        "en": { "name": "Black Thorn King", "subtitle": "Premium Black Thorn Durian", "weight": "400g / box", "badge": "BLACK THORN" }
+      },
+      {
+        "id": 5,
+        "image": "images/products/golden-phoenix.webp",
+        "prices": [
+          { "label": { "zh": "5 盒", "en": "5 boxes" }, "price": "$88" },
+          { "label": { "zh": "10 盒", "en": "10 boxes" }, "price": "$158" }
+        ],
+        "zh": { "name": "金凤榴莲果肉 400g", "subtitle": "GOLDEN PHOENIX Durian", "weight": "400g / 盒", "badge": "金凤" },
+        "en": { "name": "Golden Phoenix Durian", "subtitle": "Premium Golden Phoenix Durian", "weight": "400g / box", "badge": "GOLDEN" }
+      },
+      {
+        "id": 6,
+        "image": "images/products/durian-cake.webp",
+        "prices": [
+          { "label": { "zh": "6寸", "en": "6 inch" }, "price": "$68" },
+          { "label": { "zh": "8寸", "en": "8 inch" }, "price": "$88" }
+        ],
+        "zh": { "name": "芋泥千层榴莲蛋糕", "subtitle": "Taro Mille Crepe Durian Cake", "weight": "6寸 / 8寸可选", "badge": "爆款" },
+        "en": { "name": "Taro Mille Crepe Durian Cake", "subtitle": "Taro & Durian Mille Crepe", "weight": "6 / 8 inch", "badge": "HOT" }
+      }
+    ]
+  }
+  </script>
+
+  <script src="js/main.js?v=7"></script>
+</body>
+</html>
